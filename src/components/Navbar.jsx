@@ -42,7 +42,7 @@ const Navbar = () => {
                     <span className='absolute left-0 bottom-1 w-0 h-0.5 bg-white/50 transition-all duration-300 group-hover:w-full'></span>
                 </a>
                 <a href='#contact'className='text-xl flex items-center text-white/80 relative transition duration-300 hover:text-white/50 group'>
-                    <span>Contact us</span>
+                    <span>Contact</span>
                     <span className='absolute left-0 bottom-1 w-0 h-0.5 bg-white/50 transition-all duration-300 group-hover:w-full'></span>
                 </a>
                 

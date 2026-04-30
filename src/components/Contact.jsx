@@ -17,7 +17,15 @@ function Contact(){
         from_email: '',
         message: ''
     })
-    // let [status, setStatus] = useState(false);
+    let [status, setStatus] = useState(false);  // for sending email status
+
+
+
+    if(status){
+        setTimeout(()=>{
+            setStatus(false);
+        },3000)
+    }
 
     function sendEmail(e) {
         e.preventDefault();
@@ -28,17 +36,15 @@ function Contact(){
             { publicKey: myPublicKey }       // ← paste your Public Key
         )
             .then(() => {
-                //   setStatus('success')
+                setStatus(true);
                 form.current.reset();
                 setFormData({ from_name: '', from_email: '', message: '' })  // reset form
             })
             .catch((err) => {
-                //   setStatus('error')
+                setStatus(true);
                 console.log(err)
             })
-}
-
-
+    }
 
   return (
     <motion.div
@@ -70,6 +76,8 @@ function Contact(){
                                     <button type='submit' onClick={(e)=>sendEmail(e)} className='w-full bg-green-400 text-xl rounded-2xl px-3 py-4 bg-violet-500 font-medium hover:bg-violet-400 cursor-pointer'>Send Message</button>
                                     
                                 </form>
+                               {status ? <h2 className='text-md p-4 m-4`'>🎉 Done! We'll get back to you soon. </h2> : null} 
+                                
 
                             </div>
                             <div className='space-y-6 pl-7 pt-4'>
