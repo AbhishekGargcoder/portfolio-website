@@ -17,10 +17,10 @@ function Hero(){
           <div className='mt-5 flex flex-col items-center px-6 md:flex-row justify-between container mx-auto'>
             {/* left wala div */}
               <div className='md:w-1/2  mb-10  md:mb-0'>
-                  <h1 className='text-5xl font-bold '>Hi,
-                     <span className='text-violet-400 '>I'm Abhishek garg</span>
+                  <h1 className='text-5xl font-bold mt-6'>Hi,
+                     <span className='text-violet-400 text-4xl  '>I'm Abhishek garg</span>
                     </h1>
-                  <h2 className='text-3xl font-semibold md:text-3xl mb-6 mt-4  typewriter-name'>MERN Stack Developer</h2>
+                  <h2 className='text-3xl font-semibold md:text-3xl mb-6 mt-4 text-xl typewriter-name'>MERN Stack Developer</h2>
                   <p className='text-lg text-gray-400 mb-8'>
                       I'm a full stack developer with a passion for creating innovative solutions. I love building user-friendly, responsive web applications that deliver exceptional user experiences.
                   </p>
@@ -33,11 +33,12 @@ function Hero(){
               </div>
               {/* right wala div */}
               <div>
-                <motion.img animate={{y:[0,-20,0]}}
+                <motion.img animate={{y:[0,-30,0]}}
                 transition={{
-                    duration:10,
+                    duration:3,
                     repeat :Infinity,
                     repeatType:"loop",
+
                     ease:"easeOut"
                 }}
                 src={assets.reactLogo} alt='img' 

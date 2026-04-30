@@ -3,7 +3,7 @@ import React from 'react'
 
 export default function ProjectCard({ title, description, image, tech, icons, demo, code }) {
     return (
-        <div className='rounded-2xl p-4 border-1 transition-transform duration-300 hover:scale-105 hover:shadow-lg hover:bg-dark-400 hover:text-white cursor-pointer'>
+        <div className='rounded-2xl p-4 transition-transform duration-300 hover:scale-105 hover:shadow-lg hover:bg-dark-400 hover:text-white cursor-pointer'>
             <img src={image} alt="image-not-loaded" className='rounded-2xl w-full h-60 object-cover' />
             <h3 className='font-semibold text-xl p-4'>{title}</h3>
             <p className='text-sm text-gray-400 p-4'>{description}</p>

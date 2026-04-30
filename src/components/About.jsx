@@ -42,10 +42,10 @@ export default function About(){
                   >
                       <div className='rounded-4xl p-8'>
                           <h3 className='text-2xl font-semibold mb-6'>My Journey </h3>
-                          <p className='text-gray-400 mb-6'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, laboriosam optio facere vitae earum exercitationem eaque dolores, nihil illum tempore saepe, atque provident quisquam magnam officiis fuga. Dolorem, illum aut?
+                          <p className='text-gray-400 mb-6'>Fresh out of the gate, but anything but a beginner. I'm a MERN Stack Developer with a sharp eye for problem-solving and a passion for building end-to-end web applications that actually work — fast, clean, and scalable. Ready to contribute from day one.
                           </p>
 
-                          <p className='text-gray-400 mb-12'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit sed debitis, dolorum accusantium, accusamus nulla provident mollitia </p>
+                          <p className='text-gray-400 mb-12'>Every great product starts with a problem worth solving. As a MERN Stack Developer, that's exactly how I think — from the database to the UI, I engineer with purpose. I'm a fresher hungry for real-world challenges, and I bring the full stack to the table: MongoDB, Express, React, and Node.js.</p>
 
                           {/* {Cards} */}
                           <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>

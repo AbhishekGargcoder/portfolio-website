@@ -31,7 +31,7 @@ function Projects(){
 
             {/* {more projects div hai ye} */}
             <div className='text-center mt-10'>
-                <a href="" className='text-xl inline-flex border-violet-500  px-6 py-3 justify-center bg-violet-500 rounded-xl items-center border-2 font-medium transition-transform duration-300 hover:scale-105 hover:shadow-lg hover:bg-dark-400 hover:text-white  '>
+                <a href="#projects" className='text-xl inline-flex border-violet-500  px-6 py-3 justify-center bg-violet-500 rounded-xl items-center border-2 font-medium transition-transform duration-300 hover:scale-105 hover:shadow-lg hover:bg-dark-400 hover:text-white  '>
                     <span className='font-medium text-grey-400 p-2 rounded-2xl'>More Projects</span>
                     <FaArrowRight />
                 </a>
