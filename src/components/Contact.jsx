@@ -6,6 +6,10 @@ import { FaArrowRight, FaPhone, FaVoicemail, FaGithub, FaInstagram, FaLinkedin, 
 import { FaMapMarkerAlt, FaEnvelope } from 'react-icons/fa'
 import emailjs from '@emailjs/browser'
 
+const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const templateID = import.meta.env.VITE_TEMPLATE_ID;
+const myPublicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
 function Contact(){
     let form = useRef();
     let [formData, setFormData] = useState({
@@ -18,10 +22,10 @@ function Contact(){
     function sendEmail(e) {
         e.preventDefault();
         emailjs.sendForm(
-            'service_ldmwbyh',       // ← paste your Service ID
-            'template_0hr1drk',      // ← paste your Template ID
+            serviceID,       // ← paste your Service ID
+            templateID,      // ← paste your Template ID
             form.current,
-            { publicKey: 'TwnLAvXE7gB_3c81X' }       // ← paste your Public Key
+            { publicKey: myPublicKey }       // ← paste your Public Key
         )
             .then(() => {
                 //   setStatus('success')
