@@ -20,11 +20,9 @@ export default function ProjectCard({ title, description, image, tech, icons, de
             {/* btn for github code and deployment link */}
             <div className=' flex justify-center items-center'>
                 <a className='p-4 m-3 text-md bg-violet-500 rounded-xl transition-transform duration-300 hover:scale-105 hover:text-white '  href={code}>View Code</a>
-                <a className='p-4 m-3 text-md bg-dark-500 border-2 rounded-xl transition-transform duration-300 hover:scale-105  hover:bg-dark-400 hover:text-white'  href={demo}>Live Demo</a>
+                <a className='p-4 m-3 text-md bg-dark-500 border-2 rounded-xl transition-transform duration-300 hover:scale-105  hover:bg-dark-400 hover:text-white'  href={demo}>Live Link</a>
 
             </div>
-            
-
         </div>
     )
 }

@@ -1,11 +1,19 @@
 import { FaLightbulb, FaPaintBrush, FaCode, FaReact, FaServer, FaMobileAlt, FaTools, FaNodeJs, FaStripe, FaVuejs, FaFire, FaDatabase, FaCloud, FaRobot } from 'react-icons/fa';
 
 import reactLogo from '../assets/image.jpg';
-
 import projectImage from '../assets/projectImage-sample.png';
+import whatsappChromeExtension from '../assets/whatsappChromeExtension.png';
+import inkflowBlog from '../assets/inkflowBlog.png';
+// import portfolioWebsite from '../assets/portfolio-website.png';
+
 export const assets = {
     reactLogo,
     projectImage,
+    projectsImage:[
+      inkflowBlog,
+      whatsappChromeExtension,
+      // portfolioWebsite,
+    ]
 }
 
 export const aboutInfo = [
@@ -68,22 +76,22 @@ export const skills = [
 
 export const projects = [
   {
-    title: "Wanderlust — Airbnb Backend clone",
-    description: "•	Built a full-stack hotel booking web application using Node.js, Express.js, and Bootstrap with a clean MVC architecture",
-    image: projectImage,
-    tech: [, "Node.js", "MongoDB"],
+    title: "InkFlow - Blogging Website:",
+    description: "Built a production-ready blogging platform with authentication, blog publishing, global state management, and serverless backend deployment using Cloudflare Workers for scalable performance.",
+    image: assets.projectsImage[0],
+    tech: ["React.js","Hono", "Tailwind CSS","Cloudflare Workers","PostgreSQL","Prisma"],
     icons: [FaReact, FaNodeJs, FaDatabase , FaStripe],
-    demo: "#",
-    code: "#",
+    demo: "https://inkflow-blog.netlify.app/",
+    code: "https://github.com/AbhishekGargcoder/Inflow-blogging-app",
   },
   {
-    title: "Planora — Task Management App",
-    description: "Developed a full-featured To-Do application using the MERN stack (MongoDB, Express.js, Node.js) with full CRUD functionality",
-    image: projectImage,
-    tech: ["MongoDB", "Express.js", "Node.js",],
+    title: "Whatsapp Chrome Extension",
+    description: "Built a Chrome Extension that instantly blurs all WhatsApp Web chats with one click to protect privacy during screen shares, meetings, or public settings",
+    image: assets.projectsImage[1],
+    tech: ["HTML5","CSS3 INJECTION","JavaScript","Chrome extension Storage"],
     icons: [FaVuejs, FaFire, FaCloud , FaDatabase],
-    demo: "#",
-    code: "#",
+    demo: "https://github.com/AbhishekGargcoder/Whatsapp-chrome-extension/",
+    code: "https://github.com/AbhishekGargcoder/Whatsapp-chrome-extension/",
   },
   {
     title: "Portfolio Website",
@@ -91,8 +99,8 @@ export const projects = [
     image: projectImage,
     tech: ["React.js", "Tailwind CSS", "Framer Motion"],
     icons: [FaReact, FaDatabase],
-    demo: "#",
-    code: "#",
+    demo: "https://abhishek-garg-portfolio-app.netlify.app/",
+    code: "https://abhishek-garg-portfolio-app.netlify.app/",
   },
 ];
 
