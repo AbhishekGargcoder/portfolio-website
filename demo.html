@@ -1,55 +1,374 @@
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Freelancer Thumbnail</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Tenor+Sans&display=swap"
+        rel="stylesheet">
     <style>
-        #first {
-            width: 100px;
-            height: 200px;
-            background-color: aqua;
-            margin: 50px 100px;
-            padding: 20px;
-            border: 5px solid blue;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        #home,
-        #contacts,
-        #projects,
-        #experience,
-        #skills {
-            width: 200px;
+        body {
+            width: 800px;
+            height: 450px;
+            overflow: hidden;
+            font-family: 'Tenor Sans', sans-serif;
+            background: #0a0a0f;
+        }
+
+        .thumbnail {
+            width: 800px;
+            height: 450px;
+            position: relative;
+            background: #080810;
+            overflow: hidden;
+        }
+
+        /* Background grid */
+        .grid-bg {
+            position: absolute;
+            inset: 0;
+            background-image: linear-gradient(rgba(196, 160, 90, 0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(196, 160, 90, 0.06) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        /* Radial glow top-left */
+        .glow-tl {
+            position: absolute;
+            top: -80px;
+            left: -80px;
+            width: 380px;
+            height: 380px;
+            background: radial-gradient(circle, rgba(196, 160, 90, 0.18) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        /* Radial glow bottom-right */
+        .glow-br {
+            position: absolute;
+            bottom: -100px;
+            right: -60px;
+            width: 340px;
+            height: 340px;
+            background: radial-gradient(circle, rgba(120, 80, 200, 0.14) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        /* Diagonal accent line */
+        .accent-line {
+            position: absolute;
+            top: 0;
+            right: 160px;
+            width: 1px;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent, rgba(196, 160, 90, 0.5) 30%, rgba(196, 160, 90, 0.5) 70%, transparent);
+        }
+
+        /* Top horizontal line */
+        .top-line {
+            position: absolute;
+            top: 54px;
+            left: 48px;
+            right: 48px;
+            height: 1px;
+            background: linear-gradient(to right, rgba(196, 160, 90, 0.8), rgba(196, 160, 90, 0.2), transparent);
+        }
+
+        /* Bottom horizontal line */
+        .bottom-line {
+            position: absolute;
+            bottom: 54px;
+            left: 48px;
+            right: 48px;
+            height: 1px;
+            background: linear-gradient(to right, rgba(196, 160, 90, 0.8), rgba(196, 160, 90, 0.2), transparent);
+        }
+
+        /* Corner ornament top-left */
+        .corner-tl {
+            position: absolute;
+            top: 28px;
+            left: 28px;
+            width: 36px;
+            height: 36px;
+            border-top: 1.5px solid rgba(196, 160, 90, 0.9);
+            border-left: 1.5px solid rgba(196, 160, 90, 0.9);
+        }
+
+        /* Corner ornament bottom-left */
+        .corner-bl {
+            position: absolute;
+            bottom: 28px;
+            left: 28px;
+            width: 36px;
+            height: 36px;
+            border-bottom: 1.5px solid rgba(196, 160, 90, 0.9);
+            border-left: 1.5px solid rgba(196, 160, 90, 0.9);
+        }
+
+        /* Main content area */
+        .content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 620px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 60px 56px;
+        }
+
+        .label {
+            font-family: 'Tenor Sans', sans-serif;
+            font-size: 10px;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: rgba(196, 160, 90, 0.85);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .label::before {
+            content: '';
+            display: block;
+            width: 28px;
+            height: 1px;
+            background: rgba(196, 160, 90, 0.7);
+        }
+
+        .name {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 300;
+            font-size: 64px;
+            line-height: 1.0;
+            color: #f0e8d5;
+            letter-spacing: -1px;
+            margin-bottom: 6px;
+        }
+
+        .name em {
+            font-style: italic;
+            color: rgba(196, 160, 90, 0.95);
+        }
+
+        .title {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 300;
+            font-style: italic;
+            font-size: 22px;
+            color: rgba(220, 210, 195, 0.65);
+            letter-spacing: 1px;
+            margin-bottom: 32px;
+        }
+
+        .divider {
+            width: 48px;
+            height: 1px;
+            background: linear-gradient(to right, rgba(196, 160, 90, 0.9), transparent);
+            margin-bottom: 28px;
+        }
+
+        .skills {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .skill-tag {
+            font-family: 'Tenor Sans', sans-serif;
+            font-size: 9.5px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: rgba(196, 160, 90, 0.75);
+            border: 1px solid rgba(196, 160, 90, 0.22);
+            padding: 6px 14px;
+            background: rgba(196, 160, 90, 0.04);
+        }
+
+        /* Right panel */
+        .right-panel {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 180px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .avatar-ring {
+            width: 100px;
             height: 100px;
-            background-color: chocolate;
-            margin-left: 150px;
-            padding: 30px;
-            border: 5px solid black;
-            margin-top: 500px;
+            border-radius: 50%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .avatar-ring::before {
+            content: '';
+            position: absolute;
+            inset: -3px;
+            border-radius: 50%;
+            background: conic-gradient(rgba(196, 160, 90, 0.9) 0deg, rgba(196, 160, 90, 0.1) 180deg, rgba(196, 160, 90, 0.9) 360deg);
+        }
+
+        .avatar-ring::after {
+            content: '';
+            position: absolute;
+            inset: -6px;
+            border-radius: 50%;
+            background: conic-gradient(rgba(196, 160, 90, 0.3) 0deg, transparent 120deg, rgba(196, 160, 90, 0.3) 240deg, transparent 360deg);
+        }
+
+        .avatar-inner {
+            width: 94px;
+            height: 94px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #1a1820 0%, #120f1a 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .avatar-initials {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 300;
+            font-size: 32px;
+            color: rgba(196, 160, 90, 0.9);
+            letter-spacing: 2px;
+        }
+
+        .stats {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-num {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 24px;
+            font-weight: 300;
+            color: rgba(196, 160, 90, 0.9);
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-family: 'Tenor Sans', sans-serif;
+            font-size: 8px;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: rgba(200, 195, 185, 0.4);
+            margin-top: 3px;
+        }
+
+        .stat-divider {
+            width: 20px;
+            height: 1px;
+            background: rgba(196, 160, 90, 0.2);
+        }
+
+        /* Floating dot ornaments */
+        .dot {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            border-radius: 50%;
+            background: rgba(196, 160, 90, 0.5);
+        }
+
+        .dot-1 {
+            top: 55px;
+            left: 620px;
+        }
+
+        .dot-2 {
+            bottom: 55px;
+            left: 620px;
+        }
+
+        /* Animated shimmer on name */
+        @keyframes shimmer {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.82;
+            }
+        }
+
+        .name {
+            animation: shimmer 4s ease-in-out infinite;
         }
     </style>
-
 </head>
 
 <body>
-    <p> this is demo page.
-    </p>
-    <a href="/home">home</a> <br> <br>
-    <a href="#home">hero</a>
-    <a href="#skills">skills</a>
-
-    <a href="#contacts">contacts</a>
-    <a href="#experience">experience</a>
-    <a href="#projects">projects</a>
-
-
-    <div id="first">first</div>
-    <div id="home">home</div>
-    <div id="skills">skills</div>
-    <div id="contacts">contacts</div>
-    <div id="projects">projects</div>
-    <div id="experience">experience</div>
+    <div class="thumbnail">
+        <div class="grid-bg"></div>
+        <div class="glow-tl"></div>
+        <div class="glow-br"></div>
+        <div class="accent-line"></div>
+        <div class="top-line"></div>
+        <div class="bottom-line"></div>
+        <div class="corner-tl"></div>
+        <div class="corner-bl"></div>
+        <div class="dot dot-1"></div>
+        <div class="dot dot-2"></div>
+        <div class="content">
+            <div class="label">Available for hire</div>
+            <div class="name">Abhishek <em>Garg</em></div>
+            <div class="title">Creative Professional &amp; Specialist</div>
+            <div class="divider"></div>
+            <div class="skills"> <span class="skill-tag">Web apps (0 -- > 1)</span> <span class="skill-tag">Frontend Development</span>
+                <span class="skill-tag">Branding</span> <span class="skill-tag">UI / UX Design</span> </div>
+        </div>
+        <div class="right-panel">
+            <div class="avatar-ring">
+                <div class="avatar-inner"> <span class="avatar-initials">AB</span> </div>
+            </div>
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-num">10+</div>
+                    <div class="stat-label">Projects</div>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <div class="stat-num">4.6★</div>
+                    <div class="stat-label">Rating</div>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <div class="stat-num">2yr</div>
+                    <div class="stat-label">Experience</div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

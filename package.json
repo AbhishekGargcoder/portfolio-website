@@ -7,9 +7,11 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "wrangler deploy "
   },
   "dependencies": {
+    "@cloudflare/vite-plugin": "^1.36.4",
     "@emailjs/browser": "^4.4.1",
     "@tailwindcss/vite": "^4.2.4",
     "framer-motion": "^12.38.0",
