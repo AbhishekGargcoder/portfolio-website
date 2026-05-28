@@ -85,11 +85,11 @@ export const projects = [
     demo: "https://task-flow-two-umber.vercel.app/",
     code: "https://github.com/AbhishekGargcoder/TaskFlow",
   },
-   {
+  {
     title: "HR Email Automation System",
     description: "",
     image: assets.projectsImage[1],
-    tech: ["Node.js", "TypeScript", "Express.js", "React.js","Tailwind CSS", "Resend API" ,"DNS","Nodemailer","SMTP","Cloudflare Pages"],
+    tech: ["Node.js", "TypeScript", "Express.js", "React.js", "Tailwind CSS", "Resend API", "DNS", "Nodemailer", "SMTP", "Cloudflare Pages"],
     icons: [FaReact, FaNodeJs, FaDatabase, FaStripe],
     demo: "https://cb7297d6.hr-email-automation-system.pages.dev/",
     code: "https://github.com/AbhishekGargcoder/HR-outreach-Automation-System"
@@ -98,9 +98,9 @@ export const projects = [
     title: "InkFlow - Blogging Website:",
     description: "Built a production-ready blogging platform with authentication, blog publishing, global state management, and serverless backend deployment using Cloudflare Workers for scalable performance.",
     image: assets.projectsImage[2],
-    tech: ["React.js", "Hono", "Tailwind CSS", "Cloudflare Workers", "PostgreSQL", "Prisma"],
+    tech: ["React.js", "Hono", "Tailwind CSS", "Cloudflare Workers", "PostgreSQL", "Prisma", "Resend"],
     icons: [FaReact, FaNodeJs, FaDatabase, FaStripe],
-    demo: "https://inkflow-blog.netlify.app/",
+    demo: "https://inflowweb.pages.dev/",
     code: "https://github.com/AbhishekGargcoder/Inflow-blogging-app",
   },
   {
