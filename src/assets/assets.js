@@ -137,7 +137,7 @@ export const workData = [
   {
     role: "Software Developer",
     company: "Perfect Software Solutions",
-    duration: "Dec 2025 - Present",
+    duration: "Aug 2024 - Present",
     description:
       "Developing and maintaining web applications using React.js, Node.js, and Postgres SQL. Collaborating with cross-functional teams to design and implement new features, optimize performance, and ensure code quality.",
     color: "blue"

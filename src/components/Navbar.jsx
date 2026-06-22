@@ -9,6 +9,15 @@ const Navbar = () => {
     const toggleMenu = () => {
         setShowMenu(!showMenu);
     }
+    let [theme,toggleTheme] = useState('dark');
+
+    const changeTheme = (newTheme) => {
+        console.log(newTheme)
+    //   document.documentElement.classList.toggle('dark')// toggling the 'dark' class on the root element = <html class="dark">
+        
+        toggleTheme(newTheme)
+    }
+
     return (
         <nav className='fixed w-full z-50 bg-black/90 backdrop-blur-sm py-4 px-8 w-full '>
             <div className='flex justify-between mx-auto  items-center '>
@@ -45,6 +54,13 @@ const Navbar = () => {
                         <span>Contact</span>
                         <span className='absolute left-0 bottom-1 w-0 h-0.5 bg-white/50 transition-all duration-300 group-hover:w-full'></span>
                     </a>
+                    <button
+                        onClick={() => changeTheme(theme === 'light' ? 'dark' : 'light')}
+                        className=" py-2 text-2xl bg-muted text-foreground rounded-lg hover:bg-muted/80 transition"
+                        aria-label="Toggle theme"
+                    >
+                        {theme === 'light' ? '🌙' : '☀️'}
+                    </button>
 
                 </div>
                 <div className='md:hidden'>
@@ -82,6 +98,7 @@ const Navbar = () => {
                         <span>Contact us</span>
                         <span className='absolute left-0 bottom-1 w-0 h-0.5 bg-white/50 transition-all duration-300 group-hover:w-full'></span>
                     </a>
+                  
 
                 </div>
 
