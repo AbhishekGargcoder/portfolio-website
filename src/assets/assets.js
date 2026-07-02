@@ -137,17 +137,17 @@ export const workData = [
   {
     role: "Software Developer",
     company: "Perfect Software Solutions",
-    duration: "Aug 2024 - Present",
+    duration: "",
     description:
       "Developing and maintaining web applications using React.js, Node.js, and Postgres SQL. Collaborating with cross-functional teams to design and implement new features, optimize performance, and ensure code quality.",
     color: "blue"
   },
-  {
-    role: "Analyst Trainee",
-    company: "Cognizant Technology Solutions",
-    duration: "Sept 2025 - Nov 2025",
-    description:
-      "Completed structured training in Linux administration, networking fundamentals, Windows Server, and relational databases.",
-    color: "blue"
-  }
+  // { 
+  //   role: "Analyst Trainee",
+  //   company: "Cognizant Technology Solutions",
+  //   duration: "Sept 2025 - Nov 2025",
+  //   description:
+  //     "Completed structured training in Linux administration, networking fundamentals, Windows Server, and relational databases.",
+  //   color: "blue"
+  // }
 ];
